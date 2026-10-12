@@ -1,4 +1,4 @@
-__all__ = ['my_sum', 'factorial']
+__all__ = ['my_sum', 'factorial', 'sin']
 
 
 def my_sum(iterable):
