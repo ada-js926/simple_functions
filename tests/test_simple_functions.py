@@ -33,7 +33,7 @@ class TestSimpleFunctions:
         """sin(x) is right for small numbers of terms."""
         assert sin(x, terms) == pytest.approx(np.sin(x), rel=1e-5)
 
-    def test_compute_error_function():
+    def test_compute_error_function(self):
         """Test error function values against known constants."""
         assert compute_error_function(0.0) == pytest.approx(0.0)
         assert compute_error_function(1.0) == pytest.approx(0.8427007929497148)
