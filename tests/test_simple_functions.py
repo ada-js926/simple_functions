@@ -24,8 +24,7 @@ class TestSimpleFunctions:
     def test_factorial(self, number, expected):
         """factorial is right for small numbers, including 0! = 1."""
         assert factorial(number) == expected
-
-
+        
     @pytest.mark.parametrize('x, terms', [
             (0.1, 3),
             (0.01, 3),
