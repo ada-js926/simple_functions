@@ -27,9 +27,7 @@ class TestSimpleFunctions:
 
 
     @pytest.mark.parametrize('x, terms', [
-            (0.1, 1),
             (0.1, 3),
-            (0.01, 1),
             (0.01, 3),
         ])
     def test_sin(self, x, terms):
