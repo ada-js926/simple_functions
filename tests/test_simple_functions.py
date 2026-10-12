@@ -25,12 +25,13 @@ class TestSimpleFunctions:
         """factorial is right for small numbers, including 0! = 1."""
         assert factorial(number) == expected
 
-    @pytest.mark.parametrize('x, terms, expected', [
-        (0, 1, 0),
-        (0, 5, 0),
-        (np.pi/2, 1, 1),
-        (np.pi/2, 5, pytest.approx(1, abs=1e-12)),
+
+    @pytest.mark.parametrize('x, terms', [
+        (np.pi/2, 1),
+        (np.pi/2, 5),
+        (np.pi, 1),
+        (np.pi, 5),
     ])
-    def test_sin(self, x, terms, expected):
-        """sin is right for small numbers."""
-        assert sin(x, terms) == expected
+    def test_sin(self, x, terms):
+        """sin(x) is right for small numbers of terms."""
+        assert sin(x, terms) == pytest.approx(np.sin(x))
