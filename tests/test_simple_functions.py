@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 
-from simple_functions import my_sum, factorial, sin
+from simple_functions import my_sum, factorial, sin, compute_error_function
 
 
 class TestSimpleFunctions:
@@ -32,3 +32,8 @@ class TestSimpleFunctions:
     def test_sin(self, x, terms):
         """sin(x) is right for small numbers of terms."""
         assert sin(x, terms) == pytest.approx(np.sin(x), rel=1e-5)
+
+    def test_compute_error_function():
+        """Test error function values against known constants."""
+        assert compute_error_function(0.0) == pytest.approx(0.0)
+        assert compute_error_function(1.0) == pytest.approx(0.8427007929497148)

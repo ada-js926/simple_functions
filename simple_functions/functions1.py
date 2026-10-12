@@ -1,4 +1,6 @@
-__all__ = ['my_sum', 'factorial', 'sin']
+from scipy.special import erf
+
+__all__ = ['my_sum', 'factorial', 'sin', 'compute_error_function']
 
 
 def my_sum(iterable):
@@ -17,3 +19,8 @@ def factorial(n):
 def sin(x, terms=1):
     """Approximate sin(x) by summing the first terms of its Taylor series."""
     return sum((-1)**k * x**(2*k+1) / factorial(2*k+1) for k in range(terms))
+
+
+def compute_error_function(x):
+    """Compute the error function of x using SciPy."""
+    return erf(x)
