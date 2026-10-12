@@ -17,3 +17,4 @@ def rsum(n):
     """Return the sum of the terms k = 0, 1, ..., n of Ramanujan's series."""
     t = factorial(4*n)*(1103+26390*n)/(factorial(n)**4*396**(4*n))
     return t + rsum(n-1) if n else t
+
